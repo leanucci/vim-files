@@ -1,6 +1,6 @@
 set nocompatible
 set nobackup
-"set directory=~/.vim/swap
+set nowritebackup
 set tags=~/.tags/
 
 set tabstop=2
@@ -14,6 +14,7 @@ autocmd FileType make     set noexpandtab
 autocmd FileType python   set noexpandtab
 
 set number
+set numberwidth=5
 set cindent
 set showmatch
 
@@ -24,6 +25,13 @@ set hlsearch
 set encoding=utf8
 set tenc=utf8
 set fileencoding=utf8
+
+" Color scheme
+colorscheme vibrantink
+" highlight NonText guibg=#060606
+" highlight Folded  guibg=#0A0A0A guifg=#9090D0
+set lines=40
+set columns=140
 
 syntax on
 
@@ -47,25 +55,6 @@ map <Leader>d :execute 'NERDTreeToggle ' . getcwd()<cr>
 
 filetype plugin indent on
 
-function! ExecuteFile()
-    let file = expand("%")
-    if stridx(file, "_spec.rb") != -1
-      execute "!spec %"
-    elseif stridx(file, "_test.rb") != -1
-     execute "!ruby -Itest %"
-    elseif stridx(file, ".rb") != -1
-     execute "!ruby %"
-    elseif stridx(file, ".lisp") != -1
-     execute "!clisp %"
-    elseif stridx(file, ".feature") != -1
-     execute "!cucumber --language es --no-source --no-color %"
-    else
-     execute "! %"
-    endif
-endfunction
-
-map <F5> :call ExecuteFile()<CR>
-
 " Use Ack instead of Grep when available
 if executable("ack")
     set grepprg=ack\ -H\ --nogroup\ --nocolor
@@ -73,28 +62,6 @@ endif
 
 vmap <Leader>g :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 let mapleader = ","
-
-map <D-1> :tabn 1<CR>
-map <D-2> :tabn 2<CR>
-map <D-3> :tabn 3<CR>
-map <D-4> :tabn 4<CR>
-map <D-5> :tabn 5<CR>
-map <D-6> :tabn 6<CR>
-map <D-7> :tabn 7<CR>
-map <D-8> :tabn 8<CR>
-map <D-9> :tabn 9<CR>
-
-map! <D-1> <C-O>:tabn 1<CR>
-map! <D-2> <C-O>:tabn 2<CR>
-map! <D-3> <C-O>:tabn 3<CR>
-map! <D-4> <C-O>:tabn 4<CR>
-map! <D-5> <C-O>:tabn 5<CR>
-map! <D-6> <C-O>:tabn 6<CR>
-map! <D-7> <C-O>:tabn 7<CR>
-map! <D-8> <C-O>:tabn 8<CR>
-map! <D-9> <C-O>:tabn 9<CR>
-
-map <F6> :!!<CR>
 
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
