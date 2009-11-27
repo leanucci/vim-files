@@ -27,11 +27,11 @@ set tenc=utf8
 set fileencoding=utf8
 
 " Color scheme
-colorscheme vibrantink
+colorscheme railscasts
 " highlight NonText guibg=#060606
 " highlight Folded  guibg=#0A0A0A guifg=#9090D0
-set lines=40
-set columns=140
+set lines=50
+set columns=150
 
 syntax on
 

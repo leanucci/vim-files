@@ -1,5 +1,5 @@
 " Font
-set guifont=Bitstream\ Vera\ Sans\ Mono:h14
+set guifont=Bitstream\ Vera\ Sans\ Mono:h12
 
 " No audible bell
 set vb
