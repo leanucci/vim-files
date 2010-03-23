@@ -9,6 +9,7 @@ set autoindent
 set expandtab
 set backspace=start,indent,eol
 
+set guifont=Monaco:h14
 set number
 set numberwidth=5
 set cindent
@@ -19,9 +20,7 @@ set tenc=utf8
 set fileencoding=utf8
 
 " Color scheme
-colorscheme vividchalk
-set lines=50
-set columns=150
+colorscheme vibrantink
 
 let g:fuzzy_ignore = "*.png;*.jpg;*.gif;vendor/**;coverage/**;tmp/**"
 let g:fuzzy_matching_limit = 20
@@ -33,4 +32,13 @@ map <Leader>b :FuzzyFinderBuffer<cr>
 map <Leader>d :execute 'NERDTreeToggle ' . getcwd()<cr>
 
 filetype plugin indent on
+
+" NERDTree config
+let g:NERDTreeHighlightCursorline = 0
+let g:NERDTreeChristmasTree = 0
+
+" Markdown stuff from http://plasticboy.com/markdown-vim-mode/
+augroup mkd
+autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
+augroup END
 

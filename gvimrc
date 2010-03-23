@@ -1,6 +1,3 @@
-" Font
-set guifont=Bitstream\ Vera\ Sans\ Mono:h12
-
 " No audible bell
 set vb
 
@@ -10,3 +7,5 @@ set guioptions-=T
 " Use console dialogs
 set guioptions+=c
 
+set lines=35
+set columns=130
