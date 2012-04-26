@@ -8,7 +8,7 @@ set autoindent
 set expandtab
 set backspace=start,indent,eol
 
-set guifont=Monaco:h14
+set guifont=Monaco:h18
 set number
 set numberwidth=5
 set cindent
