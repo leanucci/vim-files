@@ -53,16 +53,8 @@ colorscheme vibrantink
 let g:fuzzy_ignore = "*.png;*.jpg;*.gif;vendor/**;coverage/**;tmp/**"
 let g:fuzzy_matching_limit = 20
 
-" nmap <D-r> :FuzzyFinderTextMate<CR>
 nmap <D-d> :execute 'NERDTreeToggle ' . getcwd()<CR>
-" map <Leader>t :FuzzyFinderTextMate<cr>
-" map <Leader>b :FuzzyFinderBuffer<cr>
 map <Leader>d :execute 'NERDTreeToggle ' . getcwd()<cr>
-nmap <silent> <D-r> :CommandT<CR>
-let g:CommandTMatchWindowAtTop = 1
-let g:CommandTNeverShowDotFiles = 0
-let g:CommandTMaxFiles = 300
-
 
 filetype plugin indent on
 
@@ -74,4 +66,9 @@ let g:NERDTreeChristmasTree = 0
 augroup mkd
 autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
 augroup END
+
+" PeepOpen
+map <Leader>t :execute PeepOpen
+
+" Trailing Spaces removed on save
 

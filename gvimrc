@@ -10,4 +10,4 @@ set guioptions+=c
 set lines=35
 set columns=130
 
-set fuoptions=maxvert,maxhorz
+set fu
